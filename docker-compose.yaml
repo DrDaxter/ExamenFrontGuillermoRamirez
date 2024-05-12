@@ -10,8 +10,7 @@ services:
     image: examproject:desa
     container_name: examproject
     ports:
-      - 6041:80
-      - 6042:443
+      - "8000:80"
     networks:
       - default
 networks:
