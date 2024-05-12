@@ -1,0 +1,20 @@
+version: '1'
+
+services:
+  exam-project:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      VIRTUAL_HOST: examProject.com
+    image: examproject:desa
+    container_name: examproject
+    ports:
+      - 6041:80
+      - 6042:443
+    networks:
+      - default
+networks:
+  default:
+    external: false
+    name: services_default
