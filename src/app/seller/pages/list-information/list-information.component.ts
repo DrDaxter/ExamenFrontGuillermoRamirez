@@ -4,7 +4,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { InformationInterface } from '../../interfaces/Information.interface';
 import { InformationService } from '../../services/information/information.service';
 import { NavigationExtras, Router } from '@angular/router';
-import { FormComponentProps } from '../../components/form-component/form-component.component';
 
 @Component({
   selector: 'app-list-information',

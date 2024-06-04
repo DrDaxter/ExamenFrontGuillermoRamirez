@@ -10,7 +10,7 @@ import { InformationService } from '../../services/information/information.servi
   styleUrl: './edit-information.component.css'
 })
 export class EditInformationComponent{
-  formParams!: FormComponentProps
+  formParams: FormComponentProps = {option: 'insert'}
   
   constructor(
     private activateRoutes: ActivatedRoute,

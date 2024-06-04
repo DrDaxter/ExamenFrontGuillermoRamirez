@@ -3,7 +3,10 @@ import { CommonModule } from '@angular/common';
 import { AddInformationComponent } from './pages/add-information/add-information.component';
 import { ListInformationComponent } from './pages/list-information/list-information.component';
 import { SellerRoutingModule } from './seller-routing.module';
+import { EditInformationComponent } from './pages/edit-information/edit-information.component';
+import { FormComponentComponent } from './components/form-component/form-component.component';
 //angular material
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
@@ -14,8 +17,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import { EditInformationComponent } from './pages/edit-information/edit-information.component';
-import { FormComponentComponent } from './components/form-component/form-component.component';
 
 
 
@@ -31,6 +32,7 @@ import { FormComponentComponent } from './components/form-component/form-compone
     SellerRoutingModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
@@ -38,7 +40,7 @@ import { FormComponentComponent } from './components/form-component/form-compone
     MatNativeDateModule,
     MatButtonModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
   ]
 })
 export class SellerModule { }

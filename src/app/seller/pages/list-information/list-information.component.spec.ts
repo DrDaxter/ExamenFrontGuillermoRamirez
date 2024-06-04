@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListInformationComponent } from './list-information.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('ListInformationComponent', () => {
   let component: ListInformationComponent;
@@ -8,7 +12,12 @@ describe('ListInformationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ListInformationComponent]
+      imports:[
+        MatPaginatorModule,
+        MatTableModule,
+        BrowserAnimationsModule
+      ],
+      declarations: [ListInformationComponent],
     })
     .compileComponents();
     
