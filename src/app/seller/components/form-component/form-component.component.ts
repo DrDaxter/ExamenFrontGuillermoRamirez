@@ -40,7 +40,6 @@ export class FormComponentComponent implements OnInit{
       }
     }
       
-
     this.InformationHandler.emit(data)
     this.infoForm.reset()
   }

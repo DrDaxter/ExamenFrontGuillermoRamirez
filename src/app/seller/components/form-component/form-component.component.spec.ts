@@ -29,8 +29,7 @@ describe('FormComponentComponent', () => {
       ],
       declarations: [FormComponentComponent],
       providers: [importProvidersFrom(MatNativeDateModule)]
-    })
-    .compileComponents();
+    }).compileComponents();
     
     fixture = TestBed.createComponent(FormComponentComponent);
     component = fixture.componentInstance;
@@ -40,4 +39,36 @@ describe('FormComponentComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('form val good values', () => {
+    component.infoForm.get('firstName')?.setValue("Guillermo");
+    component.infoForm.get('lastName')?.setValue("Ramirez");
+    component.infoForm.get('country')?.setValue("guatemala");
+    component.infoForm.get('costumerId')?.setValue("0000000");
+    component.infoForm.get('birthday')?.setValue(new Date());
+    component.infoForm.get('gender')?.setValue("Masculino");
+    component.infoForm.get('cellPhone')?.setValue("0000000");
+    component.infoForm.get('homePhone')?.setValue("00000000");
+    component.infoForm.get('addressHome')?.setValue("casa");
+    component.infoForm.get('profession')?.setValue("ingeniero");
+    component.infoForm.get('incomes')?.setValue(200);
+
+    expect(component.infoForm.invalid).toBeFalse();
+  });
+
+  it('form val wrong values', () => {
+    component.infoForm.get('firstName')?.setValue(undefined);
+    component.infoForm.get('lastName')?.setValue("Ramirez");
+    component.infoForm.get('country')?.setValue("pais x");
+    component.infoForm.get('costumerId')?.setValue("0000000");
+    component.infoForm.get('birthday')?.setValue('23/2/2024');
+    component.infoForm.get('gender')?.setValue(233);
+    component.infoForm.get('cellPhone')?.setValue('');
+    component.infoForm.get('homePhone')?.setValue("00000000");
+    component.infoForm.get('addressHome')?.setValue("casa");
+    component.infoForm.get('profession')?.setValue("ingeniero");
+    component.infoForm.get('incomes')?.setValue('asasas');
+    
+    expect(component.infoForm.invalid).toBeTrue();
+  })
 });
